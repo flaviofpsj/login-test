@@ -145,13 +145,14 @@ class _LoginScreenState extends State<LoginScreen> with Validation {
                     //referencing function for validation
                     validatePassword,
                     'Password',
-                    suffixIcon: new GestureDetector(
+                    suffixIcon: new IconButton(
                       //calls toggleObscure function to enable or disable obscureText parameter
-                      onTap: toggleObscure,
-                      child: Icon(
+                      onPressed: toggleObscure,
+                      icon: Icon(
                         //changes the icon
-                        obscurePassword ? Icons.visibility : Icons.visibility_off
+                        obscurePassword ? Icons.visibility_off : Icons.visibility
                       ),
+                      tooltip: obscurePassword ? 'Show' : 'Hide',
                     ),
                     //controlled by toggleObscure function
                     obscureText: obscurePassword,
